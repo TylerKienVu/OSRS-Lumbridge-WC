@@ -7,9 +7,14 @@ import org.osbot.rs07.utility.ConditionalSleep;
 public class CutTree implements Activity{
 	private Script script;
 	private RS2Object tree;
+	public String id = "CutTree";
 	
 	public CutTree(Script script){
 		this.script = script;
+	}
+	
+	public String getID(){
+		return this.id;
 	}
 	
 	public void run() throws InterruptedException{
@@ -31,7 +36,7 @@ public class CutTree implements Activity{
 	
 	public boolean validate(){
 		this.tree = script.objects.closest("Oak");
-		boolean valid = tree != null && !script.myPlayer().isAnimating() && script.inventory.isEmpty();
+		boolean valid = tree != null && !script.myPlayer().isAnimating() && !script.inventory.isFull();
 		return valid;
 	}
 }

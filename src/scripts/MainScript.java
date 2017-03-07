@@ -9,12 +9,13 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import scripts.Activity;
-import scripts.DropAll;
-import scripts.CutTree;
-import scripts.TaskManager;
-
-
+/* Things to implement:
+ * Bank
+ * WalkToTrees
+ * Features to implement:
+ * Randomized Patterns of Interaction
+ * Randomized Smart Breaks
+ */
 
 @ScriptManifest(author = "Tylersobored", info = "A simple woodcutting script", name = "Lumbridge Woodcutter", version = 0, logo = "")
 
@@ -25,7 +26,7 @@ public class MainScript extends Script {
 	@Override
 	public void onStart() {
 		log("Let's hack some trees!");
-		Collections.addAll(activities, new DropAll(this), new CutTree(this), new Wait(this));
+		Collections.addAll(activities, new CutTree(this), new WalkToBank(this), new Wait(this));
 		this.taskmanager = new TaskManager(activities,this);
 	}
 	

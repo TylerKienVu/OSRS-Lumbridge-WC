@@ -1,12 +1,18 @@
 package scripts;
+
 import org.osbot.rs07.script.Script;
 
 
 public class Wait implements Activity {
 	private Script script;
+	public String id = "Wait";
 	
 	public Wait(Script script) {
 		this.script = script;
+	}
+	
+	public String getID(){
+		return this.id;
 	}
 	
 	public void run() throws InterruptedException {
@@ -14,7 +20,7 @@ public class Wait implements Activity {
 	}
 	
 	public boolean validate(){
-		return script.myPlayer().isAnimating();
+		return script.myPlayer().isAnimating() || script.myPlayer().isMoving();
 	}
 
 }

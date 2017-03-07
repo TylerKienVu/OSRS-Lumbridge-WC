@@ -17,7 +17,7 @@ public class TaskManager {
 		if (this.activeTask == null || !this.activeTask.validate())	{
 			for (Activity task: taskList)	{
 				if (task != null && task.validate())	{
-					script.log("Changing Task");
+					script.log("Changing Task to: " + task.getID());
 					this.activeTask = task;
 					break;
 				}
