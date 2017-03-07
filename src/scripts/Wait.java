@@ -11,7 +11,7 @@ public class Wait implements Activity {
 		this.script = script;
 	}
 	
-	public String getID(){
+	public String getID() {
 		return this.id;
 	}
 	
@@ -19,7 +19,7 @@ public class Wait implements Activity {
 		Script.sleep(Script.random(500,700));
 	}
 	
-	public boolean validate(){
+	public boolean validate() {
 		return script.myPlayer().isAnimating() || script.myPlayer().isMoving();
 	}
 

@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /* Things to implement:
- * Bank
- * WalkToTrees
  * Features to implement:
  * Randomized Patterns of Interaction
  * Randomized Smart Breaks
@@ -26,7 +24,7 @@ public class MainScript extends Script {
 	@Override
 	public void onStart() {
 		log("Let's hack some trees!");
-		Collections.addAll(activities, new CutTree(this), new WalkToBank(this), new Wait(this));
+		Collections.addAll(activities, new CutTree(this), new WalkToBank(this), new Bank(this), new WalkToTrees(this), new Wait(this));
 		this.taskmanager = new TaskManager(activities,this);
 	}
 	
